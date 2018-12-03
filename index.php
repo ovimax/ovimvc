@@ -2,6 +2,7 @@
 /**
   * Index File excutes the specific controller gived by que route file
   */ 
+require("launcher.php");
 $request_uri = explode('/', $_SERVER['REQUEST_URI']);
 
 $ruta = end($request_uri);
@@ -9,9 +10,12 @@ $ruta = end($request_uri);
 $rutas = require("routes.php");
 
 
+
 if($ruta == "")
 {
-	echo "<h1>Pagina de inicio</h1><br> <a href='demo'>Ir a demo</a>";
+	$view = file_get_contents("view/incio.html");
+	$view = str_replace("<< #qui# >>", "Esto esta aqui", $view);
+	echo $view;
 }
 else{
 
@@ -28,7 +32,7 @@ require_once($file);
 $d = new $controller();
 
 
-echo $d->demo();
+echo $d->database_demo();
 
 }
 
