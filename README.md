@@ -9,3 +9,9 @@ As a web developer, with three year of experience in PHP, I thought that is time
   * Configure the .htaccess
   * Configure the html variables for controllers
   * Define the project architecture
+
+* v 0.0.2
+  * Rewrite .htaccess
+  * Adding plugins: <a href="https://jquery.com/" target="_blank">jQuey</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+  * Database test in local
+
