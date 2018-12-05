@@ -1,4 +1,5 @@
 <?php
+
 /**
   * Index File excutes the specific controller gived by que route file
   */ 
@@ -21,7 +22,7 @@ else{
 
 if(!isset($rutas[$ruta]))
 {
-	header("Location: /");
+	//header("Location: /");
 }
 $controller = $rutas[$ruta];
 
@@ -30,9 +31,7 @@ $file = "controller/".$controller.".php";
 require_once($file);
 
 $d = new $controller();
-
-
-echo $d->database_demo();
+$d->__viewer();
 
 }
 
