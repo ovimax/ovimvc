@@ -1,37 +1,35 @@
 <?php
 
-/**
-  * Index File excutes the specific controller gived by que route file
-  */ 
-require("launcher.php");
-$request_uri = explode('/', $_SERVER['REQUEST_URI']);
+error_reporting(E_ALL|E_STRICT);
 
-$ruta = end($request_uri);
+include "config/main.php";
 
-$rutas = require("routes.php");
-
-
-
-if($ruta == "")
+function auto_loader($class)
 {
-	$view = file_get_contents("view/incio.html");
-	$view = str_replace("<< #qui# >>", "Esto esta aqui", $view);
-	echo $view;
+    global $config;
+    $dir = __DIR__.$config["cotroller_path"];
+    $directorio = opendir($dir);
+
+    while ($archivo = readdir($directorio))
+    {
+        if($archivo !='.' && $archivo !='..' && $archivo!= '.git')
+        {
+            if(!is_dir($dir."/".$archivo)){
+
+                $name = explode(".", $archivo);
+                if($class == $name[0]){
+                    include($dir."/".$archivo);
+                }
+            } 
+        }
+    }
 }
-else{
+//include("F:\MAMP\htdocs\ovimvc\controller/Lanzador.php");
+spl_autoload_register("auto_loader");
 
-if(!isset($rutas[$ruta]))
-{
-	//header("Location: /");
-}
-$controller = $rutas[$ruta];
+$lanzador = new Lanzador();
 
-$file = "controller/".$controller.".php";
+echo $lanzador->hola();
 
-require_once($file);
 
-$d = new $controller();
-$d->__viewer();
-
-}
 

@@ -1,8 +1,8 @@
 <?php
 
+return $config = array(
 
-return array(
+	"cotroller_path" => "\controller",
+	"core_path" => "\controller\core",
 
-	
-
-)
+);
