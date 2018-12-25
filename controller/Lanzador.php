@@ -1,15 +1,12 @@
 <?php
 
+//namespace Lanzador;
+
 class Lanzador
 {	
 
-	public function __construct()
+	public static function run()
 	{
-		$this->mundo = "jefe";
-	}
-
-	public function hola()
-	{
-		return $this->mundo;
+		echo "<h1>HOLA MUNDO</h1>";
 	}
 }
