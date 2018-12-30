@@ -14,3 +14,6 @@
 * 2018-12-25
   * Running the autoload tests
   * Beginning with the mvc architecture
+* 2018-12-30
+  * Building the main core configuration
+  * Perform tests

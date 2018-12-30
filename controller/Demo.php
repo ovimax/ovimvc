@@ -2,7 +2,9 @@
 
 class Demo extends MainController
 {
-	public function __construct(){}
+	public function __construct(){
+		$this->__viewer();
+	}
 
 	function __viewer()
 	{	

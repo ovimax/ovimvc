@@ -1,9 +1,5 @@
 <?php
 
-require("ViewerController.php");
-require("ModelController.php");
-
-
 class MainController
 {
 	function __construct()
